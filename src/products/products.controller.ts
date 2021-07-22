@@ -10,6 +10,7 @@ import {
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { HttpCode } from '@nestjs/common';
 
 @Controller('products')
 export class ProductsController {
@@ -35,6 +36,7 @@ export class ProductsController {
     return this.productsService.update(+id, updateProductDto);
   }
 
+  @HttpCode(204)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.productsService.remove(+id);
