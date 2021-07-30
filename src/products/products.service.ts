@@ -21,7 +21,7 @@ export class ProductsService {
     return this.productRepo.find();
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     return this.productRepo.findOneOrFail(id);
   }
 
